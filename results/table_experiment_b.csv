@@ -1,0 +1,6 @@
+Model Name,Dense Layers,Folds,Epochs,Accuracy (%),Std Dev (%),ROC-AUC
+1D CNN,2,5,5,50.1,1.33,0.4881
+2D CNN (Dense=2),2,5,5,50.45,1.37,0.5088
+2D CNN (Dense=3),3,5,5,49.45,1.33,0.5151
+MLP (Dense=2),2,5,5,49.75,2.1,0.4981
+MLP (Dense=3),3,5,5,49.45,1.32,0.5052
