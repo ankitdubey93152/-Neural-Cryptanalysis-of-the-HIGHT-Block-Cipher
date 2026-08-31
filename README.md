@@ -20,6 +20,13 @@ In alignment with theoretical cryptanalytic expectations for full-round ciphers,
 
 ### Execution Commands
 
+```bash
+pip install -r requirements.txt
+python -m pytest tests/ -v
+
+python run_all.py --samples 2000
+```
+
 > **Important**: Ensure you are in the repository root directory before running commands:
 > ```powershell
 > cd -Neural-Cryptanalysis-of-the-HIGHT-Block-Cipher
