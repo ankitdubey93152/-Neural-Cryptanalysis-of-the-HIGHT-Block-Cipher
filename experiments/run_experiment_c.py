@@ -47,6 +47,9 @@ def run_experiment_c(
     X_bits = bits(X_raw)
     print(f"Data ready: X_bits shape={X_bits.shape}, labels={y.shape} (Balance: {np.mean(y):.1%} HIGHT)")
 
+    folds = 2 if quick_mode else 5
+    epochs = 2 if quick_mode else 5
+
     # 2. Define Model Configurations
     configs = [
         {
@@ -54,8 +57,8 @@ def run_experiment_c(
             "model_type": "cnn_1d",
             "builder": build_cnn_1d,
             "kwargs": {"input_shape": (64, 2), "n_dense_layers": 2},
-            "folds": 5,
-            "epochs": 5,
+            "folds": folds,
+            "epochs": epochs,
             "batch_size": 256,
         },
         {
@@ -63,8 +66,8 @@ def run_experiment_c(
             "model_type": "cnn_2d",
             "builder": build_cnn_2d,
             "kwargs": {"input_shape": (2, 64, 1), "n_dense_layers": 2, "kernel_size": 3},
-            "folds": 5,
-            "epochs": 5,
+            "folds": folds,
+            "epochs": epochs,
             "batch_size": 256,
         },
         {
@@ -72,8 +75,8 @@ def run_experiment_c(
             "model_type": "cnn_2d",
             "builder": build_cnn_2d,
             "kwargs": {"input_shape": (2, 64, 1), "n_dense_layers": 3, "kernel_size": 3},
-            "folds": 5,
-            "epochs": 5,
+            "folds": folds,
+            "epochs": epochs,
             "batch_size": 256,
         },
         {
@@ -81,8 +84,8 @@ def run_experiment_c(
             "model_type": "mlp",
             "builder": build_mlp,
             "kwargs": {"input_dim": 128, "n_dense_layers": 2, "units": 640},
-            "folds": 5,
-            "epochs": 5,
+            "folds": folds,
+            "epochs": epochs,
             "batch_size": 256,
         },
         {
@@ -90,8 +93,8 @@ def run_experiment_c(
             "model_type": "mlp",
             "builder": build_mlp,
             "kwargs": {"input_dim": 128, "n_dense_layers": 3, "units": 640},
-            "folds": 5,
-            "epochs": 5,
+            "folds": folds,
+            "epochs": epochs,
             "batch_size": 256,
         },
     ]
